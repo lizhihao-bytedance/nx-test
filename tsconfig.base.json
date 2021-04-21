@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx/mylib": ["libs/mylib/src/index.ts"]
+      "@nx/mylib": ["libs/mylib/src/index.ts"],
+      "@test/mylib": ["libs/mylib-publishable/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

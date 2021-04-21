@@ -99,6 +99,7 @@ importers:
     specifiers:
       '@arco-design/web-react': ^2.13.1
       '@test/common-components': workspace:^0.0.3
+      '@test/mylib': workspace:^0.0.1
       '@types/react': ^17.0.0
       '@types/react-dom': ^17.0.0
       css-loader: ^5.2.1
@@ -115,6 +116,7 @@ importers:
     dependencies:
       '@arco-design/web-react': 2.14.1_ba191c0052acfa37659f3ba04a2d9405
       '@test/common-components': link:../../libs/common-components
+      '@test/mylib': link:../../libs/mylib-publishable
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       ts-loader: 9.0.2_typescript@4.1.5+webpack@5.35.0
@@ -4885,6 +4887,7 @@ packages:
       supports-color:
         optional: true
     dependencies:
+      ms: 2.1.2
       supports-color: 6.1.0
     dev: true
 
@@ -6069,6 +6072,18 @@ packages:
     engines: {node: '>=4.0'}
     dev: true
 
+  /follow-redirects/1.13.3_debug@4.3.1:
+    resolution: {integrity: sha1-5VmK1QF0wbxOhyMB6CrCzZf5Amc=}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+    dependencies:
+      debug: 4.3.1_supports-color@6.1.0
+    dev: true
+
   /for-in/1.0.2:
     resolution: {integrity: sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=}
     engines: {node: '>=0.10.0'}
@@ -6180,6 +6195,7 @@ packages:
   /fsevents/1.2.13:
     resolution: {integrity: sha1-8yXLBFVZJCi88Rs4M3DvcOO/zDg=}
     engines: {node: '>= 4.0'}
+    os: [darwin]
     deprecated: fsevents 1 will break on node v14+ and could be using insecure binaries. Upgrade to fsevents 2.
     requiresBuild: true
     dependencies:
@@ -6679,6 +6695,18 @@ packages:
       micromatch: 3.1.10
     dev: true
 
+  /http-proxy-middleware/0.19.1_debug@4.3.1:
+    resolution: {integrity: sha1-GDx9xKoUeRUDBkmMIQza+WCApDo=}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      http-proxy: 1.18.1_debug@4.3.1
+      is-glob: 4.0.1
+      lodash: 4.17.21
+      micromatch: 3.1.10
+    transitivePeerDependencies:
+      - debug
+    dev: true
+
   /http-proxy/1.18.1:
     resolution: {integrity: sha1-QBVB8FNIhLv5UmAzTnL4juOXZUk=}
     engines: {node: '>=8.0.0'}
@@ -6686,6 +6714,17 @@ packages:
       eventemitter3: 4.0.7
       follow-redirects: 1.13.3
       requires-port: 1.0.0
+    dev: true
+
+  /http-proxy/1.18.1_debug@4.3.1:
+    resolution: {integrity: sha1-QBVB8FNIhLv5UmAzTnL4juOXZUk=}
+    engines: {node: '>=8.0.0'}
+    dependencies:
+      eventemitter3: 4.0.7
+      follow-redirects: 1.13.3_debug@4.3.1
+      requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /http-server/0.12.3:
@@ -11453,6 +11492,19 @@ packages:
       wbuf: 1.7.3
     dev: true
 
+  /spdy-transport/3.0.0_supports-color@6.1.0:
+    resolution: {integrity: sha1-ANSGOmQArXXfkzYaFghgXl3NzzE=}
+    dependencies:
+      debug: 4.3.1_supports-color@6.1.0
+      detect-node: 2.0.5
+      hpack.js: 2.1.6
+      obuf: 1.1.2
+      readable-stream: 3.6.0
+      wbuf: 1.7.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /spdy/4.0.2:
     resolution: {integrity: sha1-t09GYgOj7aRSwCSSuR+56EonZ3s=}
     engines: {node: '>=6.0.0'}
@@ -11462,6 +11514,19 @@ packages:
       http-deceiver: 1.2.7
       select-hose: 2.0.0
       spdy-transport: 3.0.0
+    dev: true
+
+  /spdy/4.0.2_supports-color@6.1.0:
+    resolution: {integrity: sha1-t09GYgOj7aRSwCSSuR+56EonZ3s=}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      debug: 4.3.1_supports-color@6.1.0
+      handle-thing: 2.0.1
+      http-deceiver: 1.2.7
+      select-hose: 2.0.0
+      spdy-transport: 3.0.0_supports-color@6.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /split-string/3.1.0:
@@ -12741,7 +12806,7 @@ packages:
       del: 4.1.1
       express: 4.17.1
       html-entities: 1.4.0
-      http-proxy-middleware: 0.19.1
+      http-proxy-middleware: 0.19.1_debug@4.3.1
       import-local: 2.0.0
       internal-ip: 4.3.0
       ip: 1.1.5
@@ -12757,7 +12822,7 @@ packages:
       serve-index: 1.9.1
       sockjs: 0.3.21
       sockjs-client: 1.5.1
-      spdy: 4.0.2
+      spdy: 4.0.2_supports-color@6.1.0
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.0

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // import { Button } from 'antd'
-import { Component } from '@test/common-components'
+import { Component } from '@test/mylib'
 
 export function App() {
   // Create the count state.

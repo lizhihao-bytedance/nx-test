@@ -16,6 +16,7 @@
     "nx-app-e2e": { "tags": [], "implicitDependencies": ["nx-app"] },
     "main-web": { "tags": [], "implicitDependencies": ["common-components"] },
     "common-components": { "tags": [] },
-    "mylib": { "tags": [] }
+    "mylib": { "tags": [] },
+    "mylib-publishable": { "tags": [] }
   }
 }

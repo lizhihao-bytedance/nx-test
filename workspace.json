@@ -131,6 +131,51 @@
           }
         }
       }
+    },
+    "mylib-publishable": {
+      "root": "libs/mylib-publishable",
+      "sourceRoot": "libs/mylib-publishable/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/mylib-publishable",
+            "tsConfig": "libs/mylib-publishable/tsconfig.lib.json",
+            "project": "libs/mylib-publishable/package.json",
+            "entryFile": "libs/mylib-publishable/src/index.ts",
+            "external": [
+              "react",
+              "react-dom",
+              "@emotion/styled",
+              "@emotion/react"
+            ],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/mylib-publishable/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/mylib-publishable/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/mylib-publishable"],
+          "options": {
+            "jestConfig": "libs/mylib-publishable/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

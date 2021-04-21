@@ -1,7 +1,10 @@
 {
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
-    "baseUrl": "./packages",
+    "baseUrl": "./",
+    "paths": {
+      "@test/mylib": ["libs/mylib-publishable/src"]
+    },
   },
   "exclude": [
     "node_modules",
