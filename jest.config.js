@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/apps/nx-app'],
+  projects: ['<rootDir>/apps/nx-app', '<rootDir>/libs/mylib'],
 };

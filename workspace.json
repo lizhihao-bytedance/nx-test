@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
+  "cli": { "defaultCollection": "@nrwl/react" },
   "defaultProject": "nx-app",
   "generators": {
     "@nrwl/react": {
@@ -11,13 +9,8 @@
         "linter": "eslint",
         "babel": true
       },
-      "component": {
-        "style": "@emotion/styled"
-      },
-      "library": {
-        "style": "@emotion/styled",
-        "linter": "eslint"
-      }
+      "component": { "style": "@emotion/styled" },
+      "library": { "style": "@emotion/styled", "linter": "eslint" }
     }
   },
   "projects": {
@@ -67,13 +60,9 @@
         },
         "serve": {
           "executor": "@nrwl/web:dev-server",
-          "options": {
-            "buildTarget": "nx-app:build"
-          },
+          "options": { "buildTarget": "nx-app:build" },
           "configurations": {
-            "production": {
-              "buildTarget": "nx-app:build:production"
-            }
+            "production": { "buildTarget": "nx-app:build:production" }
           }
         },
         "lint": {
@@ -105,15 +94,40 @@
             "devServerTarget": "nx-app:serve"
           },
           "configurations": {
-            "production": {
-              "devServerTarget": "nx-app:serve:production"
-            }
+            "production": { "devServerTarget": "nx-app:serve:production" }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["apps/nx-app-e2e/**/*.{js,ts}"] }
+        }
+      }
+    },
+    "main-web": {
+      "root": "apps/main-web",
+      "sourceRoot": "apps/main-web/src",
+      "projectType": "application"
+    },
+    "common-components": {
+      "root": "libs/common-components",
+      "sourceRoot": "libs/common-components/src",
+      "projectType": "library"
+    },
+    "mylib": {
+      "root": "libs/mylib",
+      "sourceRoot": "libs/mylib/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": { "lintFilePatterns": ["libs/mylib/**/*.{ts,tsx,js,jsx}"] }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/mylib"],
           "options": {
-            "lintFilePatterns": ["apps/nx-app-e2e/**/*.{js,ts}"]
+            "jestConfig": "libs/mylib/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
